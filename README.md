@@ -180,7 +180,7 @@ Enter a Book Review:
 ## 🤝 Project Links & Resources
 Fill in these URLs upon execution of the pipeline:
 * **Hugging Face Model Link:** `https://huggingface.co/your-hf-username/distilbert-goodreads-genres`
-* **Weights & Biases Run Link:** `https://wandb.ai/your-wandb-username/projects/mlops-assignment2`
+* **Weights & Biases Run Link:** https://wandb.ai/maheshvgv-mahesh/distilbert-goodreads-genres
 * **GitHub Repository:** https://github.com/maheshv2058/MLOps_Assignment2
 
 ---

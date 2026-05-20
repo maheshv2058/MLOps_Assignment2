@@ -20,7 +20,8 @@ Options
     --output_dir    Where eval_report.json is saved     (default: ./results)
     --max_length    Max tokenisation length             (default: 256)
     --eval_batch    Per-device eval batch size          (default: 32)
-    --wandb_project W&B project name                    (default: mlops-assignment2)
+    --wandb_project W&B project name                    (default: distilbert-goodreads-genres)
+    --wandb_entity  W&B entity/team name                 (default: maheshvgv-mahesh)
     --wandb_run     W&B run name for the eval run       (default: distilbert-eval)
     --seed          Random seed                         (default: 42)
 """
@@ -115,6 +116,7 @@ def evaluate(args: argparse.Namespace) -> dict:
     wandb.login(key=os.environ.get("WANDB_API_KEY", ""))
     wandb.init(
         project=args.wandb_project,
+        entity=args.wandb_entity,
         name=args.wandb_run,
         config={
             "model_dir":   args.model_dir,
@@ -196,7 +198,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output_dir",     type=str, default="./results")
     parser.add_argument("--max_length",     type=int, default=256)
     parser.add_argument("--eval_batch",     type=int, default=32)
-    parser.add_argument("--wandb_project",  type=str, default="mlops-assignment2")
+    parser.add_argument("--wandb_project",  type=str, default="distilbert-goodreads-genres")
+    parser.add_argument("--wandb_entity",   type=str, default="maheshvgv-mahesh")
     parser.add_argument("--wandb_run",      type=str, default="distilbert-eval")
     parser.add_argument("--seed",           type=int, default=42)
     return parser.parse_args()

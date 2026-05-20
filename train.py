@@ -25,7 +25,8 @@ Options
     --warmup_steps    LR scheduler warm-up steps     (default: 100)
     --weight_decay    AdamW weight decay             (default: 0.01)
     --max_length      Max tokenisation length        (default: 256)
-    --wandb_project   W&B project name               (default: mlops-assignment2)
+    --wandb_project   W&B project name               (default: distilbert-goodreads-genres)
+    --wandb_entity    W&B entity/team name            (default: maheshvgv-mahesh)
     --wandb_run       W&B run name                   (default: distilbert-run-1)
     --seed            Random seed                    (default: 42)
     --no_fp16         Disable mixed-precision even on GPU
@@ -137,6 +138,7 @@ def run_training(args: argparse.Namespace) -> Trainer:
     wandb.login(key=os.environ.get("WANDB_API_KEY", ""))
     run = wandb.init(
         project=args.wandb_project,
+        entity=args.wandb_entity,
         name=args.wandb_run,
         config={
             "model":          args.model_name,
@@ -233,8 +235,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--warmup_steps",   type=int,   default=100)
     parser.add_argument("--weight_decay",   type=float, default=0.01)
     parser.add_argument("--max_length",     type=int,   default=256)
-    parser.add_argument("--wandb_project",  type=str,   default="mlops-assignment2")
-    parser.add_argument("--wandb_run",      type=str,   default="distilbert-run-1")
+    parser.add_argument("--wandb_project",  type=str, default="distilbert-goodreads-genres")
+    parser.add_argument("--wandb_entity",   type=str, default="maheshvgv-mahesh")
+    parser.add_argument("--wandb_run",      type=str, default="distilbert-run-1")
     parser.add_argument("--seed",           type=int,   default=42)
     parser.add_argument(
         "--no_fp16",
