@@ -141,7 +141,7 @@ Our custom inference script enables immediate evaluation of the fine-tuned model
 python inference.py --model_path ./results
 
 # Run using Hugging Face Hub hosted weights directly
-python inference.py --model_path your-hf-username/distilbert-goodreads-genres
+python inference.py --model_path maheshvgv/distilbert-goodreads-genres
 ```
 
 ### Demonstration of Interactive Console Interface:
@@ -179,7 +179,7 @@ Enter a Book Review:
 
 ## 🤝 Project Links & Resources
 Fill in these URLs upon execution of the pipeline:
-* **Hugging Face Model Link:** `https://huggingface.co/your-hf-username/distilbert-goodreads-genres`
+* **Hugging Face Model Link:** https://huggingface.co/maheshvgv/distilbert-goodreads-genres
 * **Weights & Biases Run Link:** https://wandb.ai/maheshvgv-mahesh/distilbert-goodreads-genres
 * **GitHub Repository:** https://github.com/maheshv2058/MLOps_Assignment2
 
