@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# W&B local logs
+wandb/
+
+# Model checkpoints & data cache
+results/
+data_cache/
+*.pt
+*.bin
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Assignment source doc (not needed in repo)
+MLOps_Assignment2_Updated.docx
